@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepanshu Saini | Developer</title>
+    <title>Deepanshu & Atharva | Studio</title>
     <link rel="shortcut icon" href="web.jpg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
@@ -79,20 +79,27 @@
         .hero {
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 10vw, 8rem);
+            font-size: clamp(2.5rem, 9vw, 8rem); 
             font-family: 'Space Mono', monospace;
             font-weight: 700;
-            line-height: 1;
+            line-height: 1.1;
             letter-spacing: -0.05em;
             position: relative;
             user-select: none; 
             text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-divider {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            color: var(--text-muted);
+            margin: 0.5rem 0;
         }
 
         .hero-title::before, .hero-title::after {
@@ -125,11 +132,9 @@
             80% { clip-path: inset(50% 0 30% 0); } 100% { clip-path: inset(5% 0 80% 0); }
         }
 
-        /* --- ENTRANCE ANIMATION CLASSES --- */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            /* Cubic-bezier creates that premium 'snap into place' easing curve */
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
@@ -153,13 +158,40 @@
         .about-text {
             font-size: clamp(1.5rem, 3vw, 2.5rem);
             line-height: 1.4;
-            max-width: 900px;
+            max-width: 1000px;
             letter-spacing: -0.02em;
         }
 
         .highlight {
             color: #ffffff;
             font-family: 'Space Mono', monospace;
+        }
+
+        /* --- NEW CAPABILITIES GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        .skill-title {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .skill-list {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         .project-item {
@@ -201,7 +233,7 @@
             line-height: 1;
             letter-spacing: -0.05em;
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-            display: inline-block; /* Required for the reveal transform to work properly on text */
+            display: inline-block; 
         }
         
         .huge-link:hover {
@@ -215,63 +247,75 @@
     <div class="vignette"></div>
 
     <nav class="mono reveal">
-        <div>D.S // 01</div>
+        <div>D.S & A.A // STUDIO</div>
         <div class="nav-links">
-            <a href="#about">[ ABOUT ]</a>
-            <a href="#work">[ WORK ]</a>
-            <a href="#contact">[ CONTACT ]</a>
+            <a href="#about">[ STUDIO ]</a>
+            <a href="#work">[ WORKS ]</a>
+            <a href="#contact">[ INITIATE ]</a>
         </div>
     </nav>
 
     <div class="container">
         <section class="hero" id="home" style="border: none;">
-            <h1 class="hero-title" id="name" data-text="DEEPANSHU SAINI">DEEPANSHU SAINI</h1>
+            <h1 class="hero-title" id="name1" data-text="DEEPANSHU SAINI">DEEPANSHU SAINI</h1>
+            <div class="hero-divider mono">&</div>
+            <h1 class="hero-title" id="name2" data-text="ATHARVA AGARWAL">ATHARVA AGARWAL</h1>
         </section>
 
         <section id="about">
-            <div class="section-header mono reveal">(01) IDENTIFICATION</div>
+            <div class="section-header mono reveal">(01) THE STUDIO</div>
+            
             <p class="about-text reveal" style="color: var(--text-muted);">
-                First-Year <span class="highlight">B.Tech CSE</span> Student at <span class="highlight">Galgotias University</span>. Engineering robust systems by combining foundational logic in C/C++ with modern web architecture and intelligent agent design.
+                Operating as an independent freelance studio, we engineer high-performance web architecture and intelligent digital systems. By bridging the gap between raw computational logic and premium <span class="highlight">UI/UX design</span>, we deliver scalable, production-ready solutions tailored for our clients.
             </p>
+
+            <div class="skills-grid reveal">
+                <div>
+                    <h3 class="skill-title mono">// SYSTEMS & LOGIC</h3>
+                    <p class="skill-list">C, C++, Python<br>AI Agent Architecture & Backend Integration</p>
+                </div>
+                <div>
+                    <h3 class="skill-title mono">// FRONTEND & INTERFACE</h3>
+                    <p class="skill-list">HTML, CSS, JS, React.js<br>High-End UI/UX Design & Seamless Interactions</p>
+                </div>
+            </div>
         </section>
 
         <section id="work" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5vh;">
-            <div class="section-header mono reveal">(02) SELECTED WORKS</div>
+            <div class="section-header mono reveal">(02) FREELANCE COMMISSIONS & PROJECTS</div>
             
             <a href="https://fluxclothing.vercel.app/" target="_blank" class="project-item reveal">
                 <h3 class="project-title">Flux Clothing</h3>
-                <p class="project-desc">A minimalist e-commerce interface built to demonstrate high-end frontend capabilities for freelance clientele.</p>
+                <p class="project-desc">A premium e-commerce interface designed and engineered to demonstrate our high-end frontend capabilities for retail clients.</p>
             </a>
 
             <a href="https://deep-xdev.github.io/ecotrack-platform/index.html" target="_blank" class="project-item reveal">
                 <h3 class="project-title">EcoTrack Platform</h3>
-                <p class="project-desc">An environmental platform engineered for clear ecological data tracking and visualization.</p>
+                <p class="project-desc">An engineered data platform focused on utility-driven UI/UX to ensure clear ecological tracking and visualization.</p>
             </a>
 
             <div class="project-item reveal" style="cursor: default;">
                 <h3 class="project-title">Agentic Scanner</h3>
-                <p class="project-desc">An AI system in active development, designed to parse and analyze resumes programmatically.</p>
+                <p class="project-desc">An AI recruitment system in active development, combining complex parsing logic with intuitive interface design.</p>
             </div>
         </section>
 
         <section id="contact" class="contact-section">
-            <div class="section-header mono reveal">(03) INITIATE SEQUENCE</div>
-            <a href="mailto:contact.deepanshu01@gmail.com" class="huge-link mono reveal">START A<br>PROJECT ↗</a>
+            <div class="section-header mono reveal">(03) START A CONVERSATION</div>
+            <a href="mailto:contact.deepanshu01@gmail.com" class="huge-link mono reveal">COMMISSION<br>US ↗</a>
             <p class="mono reveal" style="color: var(--text-muted); margin-top: 2rem; font-size: 1rem;">contact.deepanshu01@gmail.com</p>
         </section>
     </div>
 
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
     <script>
-        // 1. Smooth Scroll Setup
         const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
 
-        // 2. Intersection Observer for Scroll Reveals
         const observerOptions = {
             root: null,
-            rootMargin: '0px 0px -10% 0px', // Triggers when element is 10% up from the bottom of the viewport
+            rootMargin: '0px 0px -10% 0px', 
             threshold: 0.1
         };
 
@@ -279,7 +323,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Stops observing once revealed to lock it in
+                    observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
@@ -288,7 +332,6 @@
             observer.observe(el);
         });
 
-        // 3. Glitch Text Logic
         class TextScramble {
             constructor(el) {
                 this.el = el;
@@ -327,15 +370,27 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const el = document.getElementById('name');
-            const fx = new TextScramble(el);
-            const finalName = "DEEPANSHU SAINI";
+            const el1 = document.getElementById('name1');
+            const fx1 = new TextScramble(el1);
+            const finalName1 = "DEEPANSHU SAINI";
+
+            const el2 = document.getElementById('name2');
+            const fx2 = new TextScramble(el2);
+            const finalName2 = "ATHARVA AGARWAL";
 
             const triggerGlitch = () => {
-                el.classList.add('is-glitching');
-                fx.setText(finalName).then(() => {
-                    el.classList.remove('is-glitching');
-                    el.setAttribute('data-text', finalName);
+                el1.classList.add('is-glitching');
+                el2.classList.add('is-glitching');
+                
+                Promise.all([
+                    fx1.setText(finalName1),
+                    fx2.setText(finalName2)
+                ]).then(() => {
+                    el1.classList.remove('is-glitching');
+                    el1.setAttribute('data-text', finalName1);
+                    
+                    el2.classList.remove('is-glitching');
+                    el2.setAttribute('data-text', finalName2);
                 });
             };
 
